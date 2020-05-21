@@ -29,9 +29,10 @@
 #' # 北京 2018 35023.74246
 #' # 北京 2019 37336.21755
 #' @export
+#' @import magrittr
+
 CompK <- function(yr = NULL, invest = NULL, InvestPrice = NULL,
                   delta = 0.096, prv){
-  data("asset")
   if (!is.null(yr)){
     asset <- data.frame(prv = prv, yr = yr, invest = invest,
                InvestIndex = NA, InvestPrice = InvestPrice) %>%
