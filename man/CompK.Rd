@@ -34,7 +34,7 @@ with equaling 1 in 1952.}
 }
 \value{
 The function return a data.frame, and its 1st coloume is province, 2nd column
-is year, 3rd column is capital stock.
+is year, 3rd column is capital stock, 4th column is the price index of investment.
 }
 \description{
 This function compute capital stock of provinces in China using Zhang et al. (2004).
