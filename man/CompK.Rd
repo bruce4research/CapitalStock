@@ -4,7 +4,14 @@
 \alias{CompK}
 \title{Compute Capital Stock}
 \usage{
-CompK(yr = NULL, invest = NULL, InvestPrice = NULL, delta = 0.096, prv)
+CompK(
+  yr = NULL,
+  invest = NULL,
+  InvestPrice = NULL,
+  delta = 0.096,
+  prv,
+  bt = 1952
+)
 }
 \arguments{
 \item{yr}{a numeric vector about years. If you only need capital stock before 2017,
@@ -21,6 +28,9 @@ with equaling 1 in 1952.}
 \item{delta}{rate of depreciation, a scalar number.}
 
 \item{prv}{a province name, a scalar character.}
+
+\item{bt}{a numeric scalor, such as 2000. It means computing capital stock with its price equal
+1 in \code{bt}}
 }
 \value{
 The function return a data.frame, and its 1st coloume is province, 2nd column
@@ -39,6 +49,8 @@ in any year (before 2017) with equaling 1 in 1952. So, it is easy then.
 \examples{
 # Compute capital stock in Xinjiang province in 1952-2017
 CompK(prv = '鏂扮枂')
+# Compute capital stock in Xinjiang province in 1952-2017 with its price equaling 1 in 2000
+CompK(prv = '鏂扮枂', bt = 2000)
 # compute capital stock in Beijing in 2018 and 2019
 CompK(yr = 2018:2019, invest = c(10801.2,11100),
    InvestPrice = c(1.86*1.03,1.86*1.03*1.021),

@@ -12,6 +12,8 @@
 #' with equaling 1 in 1952.
 #' @param delta rate of depreciation, a scalar number.
 #' @param prv a province name, a scalar character.
+#' @param bt a numeric scalor, such as 2000. It means computing capital stock with its price equal
+#'  1 in \code{bt}
 #' @note The parameter\code{InvestPrice} is a fixed base index with equaling 1 in 1952.
 #' However, we often only get a price indices of investment with equaling 1
 #' in last year. You can use \code{data(asset)} to get \code{InvestPrice}
@@ -21,6 +23,8 @@
 #' @examples
 #' # Compute capital stock in Xinjiang province in 1952-2017
 #' CompK(prv = '新疆')
+#' # Compute capital stock in Xinjiang province in 1952-2017 with its price equaling 1 in 2000
+#' CompK(prv = '新疆', bt = 2000)
 #' # compute capital stock in Beijing in 2018 and 2019
 #' CompK(yr = 2018:2019, invest = c(10801.2,11100),
 #'    InvestPrice = c(1.86*1.03,1.86*1.03*1.021),
@@ -32,7 +36,7 @@
 #' @import magrittr
 
 CompK <- function(yr = NULL, invest = NULL, InvestPrice = NULL,
-                  delta = 0.096, prv){
+                  delta = 0.096, prv, bt = 1952){
   if (!is.null(yr)){
     asset <- data.frame(prv = prv, yr = yr, invest = invest,
                InvestIndex = NA, InvestPrice = InvestPrice) %>%
@@ -43,8 +47,12 @@ CompK <- function(yr = NULL, invest = NULL, InvestPrice = NULL,
   K <- asset[asset$yr == 1952,c('prv','yr','invest')]
   K$K <- K$invest/0.1
   asset <- merge(asset, K[,c('prv','yr','K')], by = c('prv','yr'), all.x = T)
-  asset$RealInvest <- asset$invest/asset$InvestPrice
+
   ans <- asset[asset$prv %in% prv,]
+  # modify base time
+  ans$InvestPrice <- ans$InvestPrice/ans$InvestPrice[ans$yr == bt]
+  ans$RealInvest <- ans$invest/ans$InvestPrice
+
   if (prv %in% '重庆') ans$K[1] <- 1090*313/850
 
   for (i in 2:nrow(ans)) {
