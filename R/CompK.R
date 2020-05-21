@@ -19,7 +19,7 @@
 #' in last year. You can use \code{data(asset)} to get \code{InvestPrice}
 #' in any year (before 2017) with equaling 1 in 1952. So, it is easy then.
 #' @return The function return a data.frame, and its 1st coloume is province, 2nd column
-#'    is year, 3rd column is capital stock.
+#'    is year, 3rd column is capital stock, 4th column is the price index of investment.
 #' @examples
 #' # Compute capital stock in Xinjiang province in 1952-2017
 #' CompK(prv = '新疆')
