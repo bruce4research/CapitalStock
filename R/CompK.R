@@ -58,5 +58,5 @@ CompK <- function(yr = NULL, invest = NULL, InvestPrice = NULL,
   for (i in 2:nrow(ans)) {
     ans$K[i] <- ans$K[i-1] * (1-delta) + ans$RealInvest[i]
   }
-  return(ans[,c('prv','yr','K')])
+  return(ans[,c('prv','yr','K','InvestPrice')])
 }
