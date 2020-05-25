@@ -1,3 +1,5 @@
 ^CapitalStock\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
+^readme.md$
+^\.travis\.yml$

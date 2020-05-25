@@ -15,7 +15,7 @@ CompK(
 }
 \arguments{
 \item{yr}{a numeric vector about years. If you only need capital stock before 2017,
-you can use its default. If you need to compute capital stocks in other
+you can use its default \code{NULL}. If you need to compute capital stocks in other
 years (for example 2018,2019), you can set, for example, \code{yr = c(2018,2019)}.}
 
 \item{invest}{a numeric vector about investment, its length equal the length of
@@ -23,13 +23,13 @@ years (for example 2018,2019), you can set, for example, \code{yr = c(2018,2019)
 
 \item{InvestPrice}{a numeric vector about price indices of investment,
 its length equal the length of \code{yr}, and it is a fixed base index
-with equaling 1 in 1952.}
+with equaling 1 in \code{bt}.}
 
-\item{delta}{rate of depreciation, a scalar number.}
+\item{delta}{a rate of depreciation, a scalar number.}
 
 \item{prv}{a province name, a scalar character.}
 
-\item{bt}{a numeric scalor, such as 2000. It means computing capital stock with its price equal
+\item{bt}{a scalar number, such as 2000. It means computing capital stock with its price equal
 1 in \code{bt}}
 }
 \value{
@@ -37,25 +37,28 @@ The function return a data.frame, and its 1st coloume is province, 2nd column
 is year, 3rd column is capital stock, 4th column is the price index of investment.
 }
 \description{
-This function compute capital stock of provinces in China using Zhang et al. (2004).
-Note the capital stock is real economic variable, its price is 1 in 1952.
+This function compute capital stock of provinces in China using the method by Zhang et al. (2004).
 }
 \note{
-The parameter\code{InvestPrice} is a fixed base index with equaling 1 in 1952.
+The parameter \code{InvestPrice} is a fixed base index with equaling 1 in 1952 by default.
 However, we often only get a price indices of investment with equaling 1
 in last year. You can use \code{data(asset)} to get \code{InvestPrice}
 in any year (before 2017) with equaling 1 in 1952. So, it is easy then.
 }
 \examples{
 # Compute capital stock in Xinjiang province in 1952-2017
-CompK(prv = '鏂扮枂')
+CompK(prv = 'xinjiang')
 # Compute capital stock in Xinjiang province in 1952-2017 with its price equaling 1 in 2000
-CompK(prv = '鏂扮枂', bt = 2000)
+CompK(prv = 'xinjiang', bt = 2000)
 # compute capital stock in Beijing in 2018 and 2019
 CompK(yr = 2018:2019, invest = c(10801.2,11100),
    InvestPrice = c(1.86*1.03,1.86*1.03*1.021),
-   prv = '鍖椾含',delta = 0.096)
+   prv = 'beijing',delta = 0.096)
 # ...
-# 鍖椾含 2018 35023.74246
-# 鍖椾含 2019 37336.21755
+# beijing 2018 35023.74246
+# beijing 2019 37336.21755
+}
+\references{
+Zhang, Jun, Guiying Wu and Jipeng Zhang. The Estimation of China' s provincial
+capital stock :1952-2000, \emph{Economic Research Journal} (In Chinese), 2004(10): 35-44.
 }

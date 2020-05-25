@@ -158,8 +158,15 @@ asset18[asset18$prv %in% '西藏' & asset18$yr >= 1996 & asset18$yr <= 2017,'Inv
 asset18$FixAssetIndex <- NA
 asset18 <- asset18[,names(asset)]
 asset <- rbind(asset,asset18[asset18$yr != 1995,])
-asset <- arrange(asset,prv,yr)
+
 
 names(asset)[3:5] <- c('invest','InvestIndex','InvestPrice')
+# 改汉语拼音
+ans <- openxlsx::read.xlsx('data-raw/各地区固定资本生产总额及指数.xlsx',2)
+asset <- merge(asset, ans, by = 'prv', all.x = T) %>%
+  dplyr::select(alphabets,yr,invest,InvestIndex, InvestPrice) %>%
+  dplyr::rename(prv = alphabets)
+asset <- arrange(asset,prv,yr)
+
 # asset[asset$yr == 1978|asset$yr == 2000,-4]
 # usethis::use_data(asset, overwrite = TRUE)

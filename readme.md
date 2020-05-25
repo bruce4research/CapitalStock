@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![Travis build status](https://travis-ci.com/common2016/CapitalStock.svg?branch=master)](https://travis-ci.com/common2016/CapitalStock)
+  <!-- badges: end -->
+
 ### 1. 安装
 
 ```R
@@ -8,32 +12,29 @@ devtools::install_github('common2016/CapitalStock')
 
 要计算国家层面的资本存量，[Penn World Table](https://www.rug.nl/ggdc/productivity/pwt/)很方便。本包是用张军等(2004)的方法计算各省1952-2017年的资本存量。后续有时间会增加其他资本存量算法。
 
-如计算安徽省1952-2017年的资本存量，可以输入命令，
+如要计算陕西省和山西省1952-2017年的资本存量，可以输入命令，
 
 ```R
-CompK(prv = '安徽')
+CompK(prv = 'shan3xi')
+CompK(prv = 'shan1xi')
 ```
-
-如果不想使用张军等(2004)建议的0.096的折旧率，想换个新的折旧率，譬如0.1，可以，
-
+因为陕西与山西的拼音一样，所以用`shan3xi`表示陕是第三声，`shan1xi`表示山是第一声，以示区别。如果不想使用张军等(2004)建议的0.096的折旧率，想换个新的折旧率，譬如0.1，可以，
 ```R
-CompK(prv = '安徽',delta = 0.1)
+CompK(prv = 'shan3xi',delta = 0.1)
 ```
-
 想换个比如2000年作为价格指数基期重新算，可以，
-
 ```R
-CompK(prv = '安徽',delta = 0.1, bt = 2000)
+CompK(prv = 'shan3xi',delta = 0.1, bt = 2000)
 ```
 
 如果你想计算北京2018年和2019年的资本存量，只要你有当前价的固定资本形成数据和以1952=1的固定资产投资价格指数数据，就能方便计算。但一般从数据库只能得到上年=100的固定资产投资价格指数，你可以通过如下命令查看你想要的省份在2017年时以1952=1的固定资产投资价格指数，如
 
 ```R
-CompK(prv = '北京', bt = 1952)
+CompK(prv = 'beijing', bt = 1952)
 #  prv   yr   K InvestPrice
 #  ...
-#  北京 2016  29813   1.7845
-#  北京 2017  32506  1.8678
+#  beijing 2016  29813   1.7845
+#  beijing 2017  32506  1.8678
 ```
 
 
@@ -43,7 +44,7 @@ CompK(prv = '北京', bt = 1952)
 ```R
 CompK(yr = 2018:2019, invest = c(10801.2,11100),
       InvestPrice = c(1.86*1.03,1.86*1.03*1.021),
-      prv = '北京',delta = 0.096)
+      prv = 'beijing',delta = 0.096)
 ```
 
 如果算其他基期的后续资本存量，步骤类似，注意添加基期设置，如`bt = 2000`。
