@@ -18,3 +18,5 @@ Depends:
 Imports: 
     magrittr,
     dplyr
+Suggests: 
+    testthat

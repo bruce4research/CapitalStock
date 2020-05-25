@@ -51,11 +51,19 @@ CompK <- function(yr = NULL, invest = NULL, InvestPrice = NULL,
   asset <- merge(asset, K[,c('prv','yr','K')], by = c('prv','yr'), all.x = T)
 
   ans <- asset[asset$prv %in% prv,]
-  # modify base time
-  ans$InvestPrice <- ans$InvestPrice/ans$InvestPrice[ans$yr == bt]
-  ans$RealInvest <- ans$invest/ans$InvestPrice
+  # browser()
 
-  if (prv %in% 'chongqing') ans$K[1] <- 1090*313/850
+  if (prv %in% 'chongqing') {
+    # modify base time
+    ifelse (bt < 1996,
+            ans$InvestPrice <- ans$InvestPrice/asset$InvestPrice[asset$yr == bt & asset$prv %in% 'sichuan'],
+            ans$InvestPrice <- ans$InvestPrice/ans$InvestPrice[ans$yr == bt])
+    ans$RealInvest <- ans$invest/ans$InvestPrice
+    ans$K[1] <- 1090*313/850
+  }else {
+    ans$InvestPrice <- ans$InvestPrice/ans$InvestPrice[ans$yr == bt]
+    ans$RealInvest <- ans$invest/ans$InvestPrice
+  }
 
   for (i in 2:nrow(ans)) {
     ans$K[i] <- ans$K[i-1] * (1-delta) + ans$RealInvest[i]
