@@ -27,13 +27,13 @@ with equaling 1 in \code{bt}.}
 
 \item{delta}{a rate of depreciation, a scalar number.}
 
-\item{prv}{a province name, a scalar character.}
+\item{prv}{a province name, a scalar character. It's Chinese phonetic alphabets.}
 
 \item{bt}{a scalar number, such as 2000. It means computing capital stock with its price equal
 1 in \code{bt}}
 }
 \value{
-The function return a data.frame, and its 1st coloume is province, 2nd column
+The function return a data.frame, and its 1st column is province, 2nd column
 is year, 3rd column is capital stock, 4th column is the price index of investment.
 }
 \description{

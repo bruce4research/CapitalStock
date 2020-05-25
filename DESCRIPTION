@@ -2,7 +2,7 @@ Package: CapitalStock
 Title: Compute Chinese Capital Stocks
 Version: 0.0.2
 Authors@R: 
-    person(given = "P.",
+    person(given = "Pu",
            family = "Chen",
            role = c("aut","cre"),
            email = "shengnehs@qq.com")

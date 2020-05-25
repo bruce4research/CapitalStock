@@ -11,7 +11,7 @@
 #' its length equal the length of \code{yr}, and it is a fixed base index
 #' with equaling 1 in \code{bt}.
 #' @param delta a rate of depreciation, a scalar number.
-#' @param prv a province name, a scalar character.
+#' @param prv a province name, a scalar character. It's Chinese phonetic alphabets.
 #' @param bt a scalar number, such as 2000. It means computing capital stock with its price equal
 #'  1 in \code{bt}
 #' @note The parameter \code{InvestPrice} is a fixed base index with equaling 1 in 1952 by default.
@@ -19,7 +19,7 @@
 #' in last year. You can use \code{data(asset)} to get \code{InvestPrice}
 #' in any year (before 2017) with equaling 1 in 1952. So, it is easy then.
 #'
-#' @return The function return a data.frame, and its 1st coloume is province, 2nd column
+#' @return The function return a data.frame, and its 1st column is province, 2nd column
 #'    is year, 3rd column is capital stock, 4th column is the price index of investment.
 #' @references Zhang, Jun, Guiying Wu and Jipeng Zhang. The Estimation of China' s provincial
 #'    capital stock :1952-2000, \emph{Economic Research Journal} (In Chinese), 2004(10): 35-44.
@@ -51,7 +51,6 @@ CompK <- function(yr = NULL, invest = NULL, InvestPrice = NULL,
   asset <- merge(asset, K[,c('prv','yr','K')], by = c('prv','yr'), all.x = T)
 
   ans <- asset[asset$prv %in% prv,]
-  # browser()
 
   if (prv %in% 'chongqing') {
     # modify base time
