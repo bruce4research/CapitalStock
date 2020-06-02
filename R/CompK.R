@@ -1,6 +1,6 @@
 #' Compute Capital Stock
 #'
-#' This function compute capital stock of provinces in China using the method by Zhang et al. (2004).
+#' This function compute capital stock of provinces in China using the method by Zhang (2008).
 #'
 #' @param yr a numeric vector about years. If you only need capital stock before 2017,
 #'  you can use its default \code{NULL}. If you need to compute capital stocks in other
@@ -21,8 +21,8 @@
 #'
 #' @return The function return a data.frame, and its 1st column is province, 2nd column
 #'    is year, 3rd column is capital stock, 4th column is the price index of investment.
-#' @references Zhang, Jun, Guiying Wu and Jipeng Zhang. The Estimation of China' s provincial
-#'    capital stock :1952-2000, \emph{Economic Research Journal} (In Chinese), 2004(10): 35-44.
+#' @references Zhang, J., Estimation of China's provincial capital stock (1952-2004) with
+#' applications. \emph{Journal of Chinese Economic and Business Studies}, 2008. 6(2): p. 177-196.
 #' @examples
 #' # Compute capital stock in Xinjiang province in 1952-2017
 #' CompK(prv = 'xinjiang')

@@ -6,7 +6,7 @@ Authors@R:
            family = "Chen",
            role = c("aut","cre"),
            email = "shengnehs@qq.com")
-Description: Compute Chinese capital stocks in provinces level.
+Description: Compute Chinese capital stocks in provinces level, based on Zhang (2008) <DOI:10.1080/14765280802028302>. 
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

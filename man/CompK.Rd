@@ -37,7 +37,7 @@ The function return a data.frame, and its 1st column is province, 2nd column
 is year, 3rd column is capital stock, 4th column is the price index of investment.
 }
 \description{
-This function compute capital stock of provinces in China using the method by Zhang et al. (2004).
+This function compute capital stock of provinces in China using the method by Zhang (2008).
 }
 \note{
 The parameter \code{InvestPrice} is a fixed base index with equaling 1 in 1952 by default.
@@ -59,6 +59,6 @@ CompK(yr = 2018:2019, invest = c(10801.2,11100),
 # beijing 2019 37336.21755
 }
 \references{
-Zhang, Jun, Guiying Wu and Jipeng Zhang. The Estimation of China' s provincial
-capital stock :1952-2000, \emph{Economic Research Journal} (In Chinese), 2004(10): 35-44.
+Zhang, J., Estimation of China's provincial capital stock (1952-2004) with
+applications. \emph{Journal of Chinese Economic and Business Studies}, 2008. 6(2): p. 177-196.
 }
