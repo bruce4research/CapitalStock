@@ -2,7 +2,7 @@
 % Please edit documentation in R/CompK.R
 \name{CompK}
 \alias{CompK}
-\title{Compute Capital Stock}
+\title{Compute Capital Stock in Chiniese Provinces}
 \usage{
 CompK(
   yr = NULL,

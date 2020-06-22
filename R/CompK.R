@@ -1,4 +1,4 @@
-#' Compute Capital Stock
+#' Compute Capital Stock in Chiniese Provinces
 #'
 #' This function compute capital stock of provinces in China using the method by Zhang (2008).
 #'
@@ -67,5 +67,7 @@ CompK <- function(yr = NULL, invest = NULL, InvestPrice = NULL,
   for (i in 2:nrow(ans)) {
     ans$K[i] <- ans$K[i-1] * (1-delta) + ans$RealInvest[i]
   }
-  return(ans[,c('prv','yr','K','InvestPrice')])
+  ans <- ans[,c('prv','yr','K','InvestPrice')]
+  class(ans) <- c('data.frame','CapStk')
+  return(ans)
 }
