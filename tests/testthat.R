@@ -1,4 +1,4 @@
 library(testthat)
-library(CapitalStock)
+library(CHNCapitalStock)
 
-test_check("CapitalStock")
+test_check("CHNCapitalStock")
