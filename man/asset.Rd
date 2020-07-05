@@ -5,7 +5,7 @@
 \alias{asset}
 \title{Assets}
 \format{
-An object of class \code{data.frame} with 2002 rows and 5 columns.
+An object of class \code{data.frame} with 2002 rows and 6 columns.
 }
 \usage{
 asset
@@ -22,6 +22,7 @@ the price indices of investment
 \item{invest}{total fixed capital formation}
 \item{InvestIndex}{index of fixed capital formation}
 \item{InvestPrice}{price index of investment in fixed assets}
+\item{depr}{depreciation}
 }
 }
 \keyword{datasets}

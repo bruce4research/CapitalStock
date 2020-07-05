@@ -10,6 +10,7 @@
 #'      \item{invest}{total fixed capital formation}
 #'      \item{InvestIndex}{index of fixed capital formation}
 #'      \item{InvestPrice}{price index of investment in fixed assets}
+#'      \item{depr}{depreciation}
 #'   }
 
 'asset'

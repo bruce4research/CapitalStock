@@ -1,5 +1,5 @@
 ## Resubmission
-This is a resubmission. In this version I have rename the package as CHNCapitalStock.
+This is a resubmission. In this version I have renamed the package as CHNCapitalStock.
 
 ## Test environments
  * local Windows 10, R 4.0.0
