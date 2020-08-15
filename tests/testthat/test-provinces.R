@@ -13,3 +13,5 @@ test_that('Compute capital stock in Beijing province in China',{
   expect_equal((CompK(prv = 'beijing',method = 'CP', bt = 2000) %$% .[yr == 2000,'K']),7632.866, tolerance = 0.01)
   expect_equal((CompK(prv = 'beijing', method = 'CP',bt = 1952) %$% .[yr == 2000,'K']),5335.9, tolerance = 0.01)
 })
+
+

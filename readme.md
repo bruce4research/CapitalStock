@@ -15,10 +15,10 @@ devtools::install_github('common2016/CapitalStock')
 如要计算陕西省和山西省1952-2017年的资本存量，可以输入命令，
 
 ```R
-CompK(prv = 'shan3xi')
-CompK(prv = 'shan1xi')
+CompK(prv = 'shaanxi')
+CompK(prv = 'shanxi')
 ```
-因为陕西与山西的拼音一样，所以用`shan3xi`表示陕是第三声，`shan1xi`表示山是第一声，以示区别。如果不想使用张军等(2004)建议的0.096的折旧率，想换个新的折旧率，譬如0.1，可以，
+因为陕西与山西的拼音一样，所以根据习惯用`shaanxi`表示陕西，`shanxi`表示山西。如果不想使用张军等(2004)建议的0.096的折旧率，想换个新的折旧率，譬如0.1，可以，
 ```R
 CompK(prv = 'shan3xi',delta = 0.1)
 ```
