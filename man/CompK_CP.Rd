@@ -2,7 +2,7 @@
 % Please edit documentation in R/CompK_CP.R
 \name{CompK_CP}
 \alias{CompK_CP}
-\title{Compute Capital Stock in Chiniese Provinces}
+\title{Compute Capital Stock in Chinese Provinces}
 \usage{
 CompK_CP(
   prv,
@@ -18,7 +18,7 @@ CompK_CP(
 \arguments{
 \item{prv}{a province name, a scalar character. It's Chinese phonetic alphabets.}
 
-\item{startyr}{a numeric scalor. When use the mothod by Chen (2020), \code{delta} is
+\item{startyr}{a numeric scalar. When use the method by Chen (2020), \code{delta} is
 used before \code{startyr}, and after \code{startyr} depreciation in data \code{asset} is used.}
 
 \item{yr}{a numeric vector about years. If you only need capital stock before 2017,

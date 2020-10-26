@@ -2,7 +2,7 @@
 % Please edit documentation in R/CompK_ZJ.R
 \name{CompK_ZJ}
 \alias{CompK_ZJ}
-\title{Compute Capital Stock in Chiniese Provinces}
+\title{Compute Capital Stock in Chinese Provinces}
 \usage{
 CompK_ZJ(
   yr = NULL,

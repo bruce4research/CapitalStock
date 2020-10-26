@@ -2,7 +2,7 @@
 % Please edit documentation in R/CompK.R
 \name{CompK}
 \alias{CompK}
-\title{Compute Capital Stock in Chiniese Provinces}
+\title{Compute Capital Stock in Chinese Provinces}
 \usage{
 CompK(
   prv,
@@ -21,9 +21,9 @@ CompK(
 
 \item{method}{a string. \code{'ZJ'} by Zhang (2008) or \code{'CP'} by Chen (2020).}
 
-\item{startyr}{a numeric scalor. When use the mothod by Chen (2020), \code{delta} is
+\item{startyr}{a numeric scalar. When use the method by Chen (2020), \code{delta} is
 used before \code{startyr}, and after \code{startyr} depreciation in data \code{asset} is used.
-When use the mothod by Zhang (2008), the parametrs is not useful.}
+When use the method by Zhang (2008), the parameters is not useful.}
 
 \item{yr}{a numeric vector about years. If you only need capital stock before 2017,
 you can use its default \code{NULL}. If you need to compute capital stocks in other

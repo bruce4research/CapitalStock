@@ -1,4 +1,4 @@
-#' Compute Capital Stock in Chiniese Provinces
+#' Compute Capital Stock in Chinese Provinces
 #'
 #' This function compute capital stock of provinces in China using the method by Zhang (2008).
 #'

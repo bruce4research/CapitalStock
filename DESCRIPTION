@@ -13,6 +13,7 @@ LazyData: true
 URL: https://github.com/common2016/CapitalStock
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+Language: en-US
 Depends: 
     R (>= 2.10)
 Imports: 
